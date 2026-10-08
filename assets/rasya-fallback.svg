@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d1116"/>
+      <stop offset="100%" stop-color="#05070A"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#62f2ff"/>
+      <stop offset="100%" stop-color="#9f7dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#bgGrad)"/>
+  <g opacity="0.9">
+    <circle cx="600" cy="510" r="376" fill="none" stroke="url(#lineGrad)" stroke-width="4" opacity="0.26"/>
+    <circle cx="600" cy="510" r="450" fill="none" stroke="url(#lineGrad)" stroke-width="2" opacity="0.2"/>
+  </g>
+  <g fill="#dfeaf7" opacity="0.94">
+    <rect x="470" y="140" width="260" height="220" rx="44" fill="#f5f5f5"/>
+    <rect x="520" y="240" width="160" height="170" rx="18" fill="#f5f5f5"/>
+    <circle cx="600" cy="272" r="80" fill="#d9c1b2"/>
+    <path d="M480 820 L750 820 Q770 820 778 838 L782 852 Q790 868 776 886 L717 973 Q700 992 676 992 L520 992 Q500 992 484 976 L440 930 Q426 916 430 892 L446 856 Q454 842 470 842 Z" fill="#f3f4f6"/>
+    <path d="M540 340 L660 340 Q680 340 692 352 L708 366 Q722 380 720 398 L710 432 Q706 452 688 466 L650 492 Q630 506 606 506 L586 506 Q560 506 540 490 L502 462 Q482 446 478 420 L468 388 Q462 366 476 352 L510 332 Q522 340 540 340 Z" fill="#2a1f1d" opacity="0.78"/>
+    <circle cx="600" cy="430" r="55" fill="#2f201b" opacity="0.82"/>
+    <path d="M520 620 Q600 730 680 620" fill="none" stroke="#d7c5bb" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <text x="600" y="1120" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="90" fill="#EAF6FF" letter-spacing="10">RASYA</text>
+  <text x="600" y="1210" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="34" fill="#62f2ff" letter-spacing="12">NETWORK ENTHUSIAST</text>
+</svg>

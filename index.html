@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RASYA — Network Enthusiast</title>
+    <meta
+      name="description"
+      content="Rasya Ramadhan Sugandi — Network Enthusiast focused on MikroTik, FTTH, VLAN, TCP/IP and Linux."
+    />
+    <meta
+      name="keywords"
+      content="Rasya Ramadhan Sugandi, Network Enthusiast, MikroTik, FTTH, VLAN, TCP/IP, Linux, networking, homelab, OpenWrt"
+    />
+    <meta name="theme-color" content="#05070A" />
+    <meta property="og:title" content="RASYA — Network Enthusiast" />
+    <meta
+      property="og:description"
+      content="Rasya Ramadhan Sugandi — Network Enthusiast focused on MikroTik, FTTH, VLAN, TCP/IP and Linux."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/rasya-fallback.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RASYA — Network Enthusiast" />
+    <meta
+      name="twitter:description"
+      content="Rasya Ramadhan Sugandi — Network Enthusiast focused on MikroTik, FTTH, VLAN, TCP/IP and Linux."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cursor cursor-dot"></div>
+    <div class="cursor cursor-ring"></div>
+
+    <div class="loading-screen" aria-live="polite">
+      <div class="loading-shell">
+        <div class="loading-label">INITIALIZING NETWORK PROFILE...</div>
+        <div class="loading-steps">
+          <span>LOADING NETWORK STACK...</span>
+          <span>CONNECTING...</span>
+          <span>VERIFYING PROFILE...</span>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-bar"><span></span></div>
+        </div>
+        <div class="loading-percent">100%</div>
+      </div>
+    </div>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+    <canvas id="networkCanvas"></canvas>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand">
+          <span class="brand-mark">R</span>
+          <div>
+            <div class="brand-name">RASYA</div>
+            <div class="brand-sub">NETWORK ENTHUSIAST</div>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links">
+          <a href="#about">ABOUT</a>
+          <a href="#stack">STACK</a>
+          <a href="#map">MAP</a>
+          <a href="#projects">PROJECTS</a>
+          <a href="#experience">EXPERIENCE</a>
+          <a href="#contact">CONTACT</a>
+          <button class="nav-kbd" data-open-command aria-label="Open quick navigation">Ctrl + K</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-spacing">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal-up">
+            <div class="eyebrow mono">NETWORK ENTHUSIAST</div>
+            <h1 class="headline">
+              <span class="line-block">RASYA</span>
+              <span class="line-block accent-gradient" data-scramble>Building</span>
+              <span class="line-block accent-gradient">NETWORKS.</span>
+            </h1>
+            <p class="hero-description">
+              Saya Rasya. Saya suka memahami bagaimana perangkat saling terhubung,
+              membangun jaringan, dan mencari tahu kenapa sebuah koneksi tidak bekerja.
+            </p>
+            <div class="cta-row">
+              <a href="#projects" class="btn primary">EXPLORE MY WORK</a>
+              <a href="#about" class="btn secondary">ABOUT ME</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal-up">
+            <div class="photo-stage">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="orbital-node node-a">TCP/IP<br /><span>ONLINE</span></div>
+              <div class="orbital-node node-b">VLAN<br /><span>ACTIVE</span></div>
+              <div class="orbital-node node-c">MIKROTIK<br /><span>READY</span></div>
+
+              <div class="photo-frame">
+                <div class="photo-rim"></div>
+                <div class="scanlines"></div>
+                <img
+                  src="assets/rasya.png"
+                  alt="Rasya Ramadhan Sugandi"
+                  class="portrait"
+                  onerror="this.onerror=null;this.src='assets/rasya-fallback.svg';"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section-spacing">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <div class="eyebrow mono">ABOUT</div>
+            <h2>I DON'T JUST USE NETWORKS.<br />I STUDY THEM.</h2>
+          </div>
+
+          <div class="about-grid reveal-up">
+            <div class="about-copy">
+              <p>
+                Saya lulusan SMK BPPI Baleendah, jurusan Teknik Jaringan Komputer dan
+                Telekomunikasi (TJKT).
+              </p>
+              <p>
+                Pengalaman saya berfokus pada NOC dan teknisi FTTH. Saya terbiasa dengan
+                monitoring, troubleshooting, instalasi fiber, konfigurasi ONT, dan perangkat
+                jaringan.
+              </p>
+              <p>
+                Sekarang saya terus memperdalam networking melalui homelab, MikroTik, VLAN,
+                Linux, OpenWrt, dan berbagai eksperimen jaringan.
+              </p>
+            </div>
+
+            <div class="stats-wrap">
+              <div class="stat-card">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">CORE FOCUS</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">NETWORK PROJECTS</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number" data-target="999">0</div>
+                <div class="stat-label">THINGS TO LEARN</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stack" class="stack section-spacing">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <div class="eyebrow mono">NETWORK STACK</div>
+            <h2>WHAT I<br />WORK WITH.</h2>
+          </div>
+
+          <div class="skill-grid reveal-up">
+            <article class="skill-card tilt-card">
+              <div class="skill-icon">01</div>
+              <h3>NETWORKING</h3>
+              <p>Memahami bagaimana komunikasi data berjalan di level perangkat, fitur, dan logika koneksi.</p>
+              <ul>
+                <li>TCP/IP</li>
+                <li>DHCP</li>
+                <li>NAT</li>
+                <li>Routing</li>
+                <li>Troubleshooting</li>
+              </ul>
+            </article>
+
+            <article class="skill-card tilt-card">
+              <div class="skill-icon">02</div>
+              <h3>MIKROTIK</h3>
+              <p>Belajar membangun jaringan yang stabil dan terukur dengan perangkat routing dan keamanan dasar.</p>
+              <ul>
+                <li>RouterOS</li>
+                <li>VLAN</li>
+                <li>Firewall</li>
+                <li>Bandwidth Management</li>
+                <li>Routing</li>
+              </ul>
+            </article>
+
+            <article class="skill-card tilt-card">
+              <div class="skill-icon">03</div>
+              <h3>FTTH</h3>
+              <p>Terlibat dalam instalasi, konfigurasi, dan troubleshooting koneksi pelanggan menuju jaringan fiber.</p>
+              <ul>
+                <li>ODP</li>
+                <li>Fiber Optic</li>
+                <li>Fusion Splicing</li>
+                <li>ONT</li>
+                <li>PPPoE</li>
+                <li>RJ45</li>
+              </ul>
+            </article>
+
+            <article class="skill-card tilt-card">
+              <div class="skill-icon">04</div>
+              <h3>LINUX / HOMELAB</h3>
+              <p>Menguji dan mempelajari sistem berbasis Linux untuk kebutuhan lab, server, dan jaringan rumah.</p>
+              <ul>
+                <li>Debian</li>
+                <li>Armbian</li>
+                <li>Apache</li>
+                <li>SSH</li>
+                <li>OpenWrt</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="learning-tag reveal-up">
+            <div class="learning-label mono">CURRENTLY LEARNING</div>
+            <div class="learning-list">
+              <span>NETWORK SECURITY</span>
+              <span>ROUTING</span>
+              <span>WIRELESS NETWORK</span>
+              <span>MTCNA</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="network-map section-spacing">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <div class="eyebrow mono">LIVE NETWORK MAP</div>
+            <h2>EVERYTHING<br />CONNECTS.</h2>
+          </div>
+
+          <div class="map-panel reveal-up">
+            <div class="network-map-inner">
+              <div class="node node-internet" data-info="UPLINK ACTIVE">
+                <span>INTERNET</span>
+              </div>
+              <div class="node node-router" data-info="ROUTER / FIREWALL">
+                <span>MIKROTIK</span>
+              </div>
+              <div class="node node-vlan" data-info="NETWORK SEGMENTATION">
+                <span>VLAN</span>
+              </div>
+              <div class="node node-ap" data-info="ACCESS POINT">
+                <span>AP</span>
+              </div>
+              <div class="node node-server" data-info="ARMBASED HOMELAB">
+                <span>SERVER</span>
+              </div>
+              <div class="node node-client" data-info="CLIENT ENDPOINT">
+                <span>CLIENT</span>
+              </div>
+
+              <div class="line line-1"></div>
+              <div class="line line-2"></div>
+              <div class="line line-3"></div>
+              <div class="line line-4"></div>
+              <div class="line line-5"></div>
+              <div class="line line-6"></div>
+
+              <div class="packet packet-1"></div>
+              <div class="packet packet-2"></div>
+              <div class="packet packet-3"></div>
+              <div class="packet packet-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects section-spacing">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <div class="eyebrow mono">SELECTED WORK</div>
+            <h2>PROJECTS</h2>
+          </div>
+
+          <div class="project-grid reveal-up">
+            <article class="project-card tilt-card">
+              <div class="project-number">PROJECT 01</div>
+              <div class="project-meta">NETWORK / ISP</div>
+              <h3>HELMI-NET</h3>
+              <p>Neighborhood network dengan MikroTik, VLAN, OpenWrt dan PHPNuxBill.</p>
+              <div class="tech-tags">
+                <span>MikroTik</span>
+                <span>VLAN</span>
+                <span>OpenWrt</span>
+                <span>PHPNuxBill</span>
+              </div>
+            </article>
+
+            <article class="project-card tilt-card">
+              <div class="project-number">PROJECT 02</div>
+              <div class="project-meta">FIBER OPTIC</div>
+              <h3>FTTH EXPERIENCE</h3>
+              <p>Instalasi ODP ke pelanggan, fusion splicing, konfigurasi ONT dan troubleshooting.</p>
+              <div class="tech-tags">
+                <span>FTTH</span>
+                <span>ODP</span>
+                <span>Fiber Optic</span>
+                <span>ONT</span>
+                <span>PPPoE</span>
+              </div>
+            </article>
+
+            <article class="project-card tilt-card">
+              <div class="project-number">PROJECT 03</div>
+              <div class="project-meta">NETWORK OPERATIONS</div>
+              <h3>NOC EXPERIENCE</h3>
+              <p>Monitoring jaringan dan troubleshooting gangguan koneksi pelanggan.</p>
+              <div class="tech-tags">
+                <span>Monitoring</span>
+                <span>Troubleshooting</span>
+                <span>Network Support</span>
+              </div>
+            </article>
+
+            <article class="project-card tilt-card">
+              <div class="project-number">PROJECT 04</div>
+              <div class="project-meta">HOMELAB</div>
+              <h3>B860H NETWORK LAB</h3>
+              <p>TV box berbasis Armbian yang dimanfaatkan sebagai server dan bagian dari lab jaringan pribadi.</p>
+              <div class="tech-tags">
+                <span>Armbian</span>
+                <span>Debian</span>
+                <span>Apache</span>
+                <span>SSH</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="experience section-spacing">
+        <div class="container">
+          <div class="section-head reveal-up">
+            <div class="eyebrow mono">EXPERIENCE</div>
+            <h2>MY JOURNEY</h2>
+          </div>
+
+          <div class="timeline reveal-up">
+            <article class="timeline-item">
+              <div class="timeline-year">2026</div>
+              <div class="timeline-card">
+                <div class="timeline-title">NOC INTERN</div>
+                <div class="timeline-company">BEIBI CEMERLANG INDONESIA</div>
+                <p>Monitoring jaringan dan troubleshooting gangguan pelanggan.</p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-card">
+                <div class="timeline-title">FTTH TECHNICIAN</div>
+                <div class="timeline-company">PT PASS INTERNET INDONESIA</div>
+                <p>Instalasi FTTH, ODP, fusion splicing, ONT, PPPoE dan troubleshooting.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-zone section-spacing">
+        <div class="container">
+          <div class="terminal-wrap reveal-up">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">rasya@network-lab:~</span>
+            </div>
+            <div class="terminal-body" id="terminalBody"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section-spacing">
+        <div class="container">
+          <div class="contact-shell reveal-up">
+            <div class="section-head left">
+              <div class="eyebrow mono">CONTACT</div>
+              <h2>LET'S<br />CONNECT.</h2>
+            </div>
+
+            <div class="contact-copy">
+              <p>
+                Terbuka untuk peluang kerja, networking project, kolaborasi, atau sekadar ngobrol soal jaringan.
+              </p>
+            </div>
+
+            <div class="contact-list">
+              <a href="https://instagram.com/USERNAME" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://github.com/USERNAME" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://wa.me/628XXXXXXXXXX" target="_blank" rel="noreferrer">WhatsApp</a>
+              <a href="mailto:emailkamu@example.com">Email</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">RASYA.</div>
+          <div class="brand-sub">NETWORK ENTHUSIAST</div>
+        </div>
+        <div class="footer-copy">© 2026</div>
+      </div>
+    </footer>
+
+    <div class="command-palette" aria-hidden="true">
+      <div class="command-panel">
+        <div class="command-header">QUICK NAVIGATION</div>
+        <div class="command-links">
+          <a href="#about">ABOUT ME</a>
+          <a href="#stack">NETWORK STACK</a>
+          <a href="#map">NETWORK MAP</a>
+          <a href="#projects">PROJECTS</a>
+          <a href="#experience">EXPERIENCE</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
